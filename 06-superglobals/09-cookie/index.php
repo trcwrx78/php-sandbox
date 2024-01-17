@@ -1,3 +1,7 @@
+<?php
+setcookie('username', 'jdoe', time() + 3600, '/');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +10,7 @@
 </head>
 
 <body>
-  <p>Cookie set. <a href="page.php">Go to page.php</a></p>
+  <p>Cookie set. <a href="09-cookie/page.php">Go to page.php</a></p>
 </body>
 
 </html>
