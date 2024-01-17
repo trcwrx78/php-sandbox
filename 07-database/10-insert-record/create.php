@@ -1,3 +1,27 @@
+<?php
+require_once 'database.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+  $title = htmlspecialchars($_POST['title']);
+  $body = htmlspecialchars($_POST['body']);
+
+  $sql = 'INSERT INTO posts (title, body) VALUES (:title, :body)';
+
+  $stmt = $pdo->prepare($sql);
+
+  $params = [
+    'title' => $title,
+    'body' => $body
+  ];
+
+  $stmt->execute($params);
+
+  header('Location: index.php');
+  exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
